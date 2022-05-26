@@ -13,9 +13,13 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf.urls.static import static
 from django.urls import path
 from rest_framework.urlpatterns import format_suffix_patterns
 from . import views
+from django.conf import settings
+
+from rest_framework.routers import DefaultRouter
 
 urlpatterns = [
     path('users/', views.UserList.as_view()),
@@ -24,8 +28,11 @@ urlpatterns = [
     path('posts/<int:pk>/', views.PostDetail.as_view()),
     path('comments/', views.CommentList.as_view()),
     path('comments/<int:pk>/', views.CommentDetail.as_view()),
-
+    path('categories/', views.CategoryList.as_view()),
+    path('categories/<int:pk>/', views.CategoryDetail.as_view()),
 
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
