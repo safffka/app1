@@ -29,14 +29,6 @@ class Migration(migrations.Migration):
             },
         ),
         migrations.CreateModel(
-            name='PostImage',
-            fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('image', models.FileField(upload_to='images/')),
-                ('post', models.ForeignKey(default=None, on_delete=django.db.models.deletion.CASCADE, to='api.post')),
-            ],
-        ),
-        migrations.CreateModel(
             name='Comment',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),

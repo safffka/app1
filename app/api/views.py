@@ -5,7 +5,7 @@ from rest_framework.generics import ListAPIView
 from rest_framework.parsers import JSONParser, MultiPartParser, FormParser
 from rest_framework.response import Response
 from rest_framework import status
-import requests
+
 from rest_framework import generics, permissions
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -16,7 +16,7 @@ from . import serializers
 from django.contrib.auth.models import User
 
 from .helpers import modify_input_for_multiple_files
-from .models import Post, PostImage
+
 from django.contrib.auth.forms import UserCreationForm
 from .serializers import PostSerializer
 from .permissions import IsOwnerOrReadOnly
