@@ -1,4 +1,4 @@
-#!D:\app\venv\Scripts\python.exe
+#!D:\out\venv\Scripts\python.exe
 # EASY-INSTALL-ENTRY-SCRIPT: 'tokens==0.0.3','console_scripts','token-info'
 import re
 import sys

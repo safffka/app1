@@ -1,3 +1,4 @@
+from phonenumber_field.modelfields import PhoneNumberField
 from django.utils.timezone import now
 
 from decimal import Decimal
@@ -43,4 +44,10 @@ class Category(models.Model):
     class Meta:
         verbose_name_plural = 'categories'
 
-# Create your models here.
+
+class User(models.Model):
+    email = models.EmailField(unique=True, blank=True)
+    ava = models.ImageField(upload_to=upload_to, null=True, blank=True)
+    password=models.CharField(blank=True,max_length=100)
+    username=models.CharField(unique=True,blank=True,max_length=100)
+
